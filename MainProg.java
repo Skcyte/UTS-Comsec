@@ -4,10 +4,11 @@ public class MainProg{
     Library on = new Library();
     ShiftArray mov = new ShiftArray();
     on.fill();
+    on.cloning();
     on.displayLib();
     System.out.println();
-    mov.shiftRightRow1(5);
+    mov.shiftRightRow1(2);
     System.out.println();
-    mov.shiftUpCol1();
+    mov.shiftUpCol1(1);
   }
 }
