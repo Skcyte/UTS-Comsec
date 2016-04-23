@@ -4,13 +4,16 @@ public class MainProg{
     Library on = new Library();
     ShiftArray mov = new ShiftArray();
     on.fill();
-    //on.cloning();
+    on.cloning();
+    //on.cloning2();
     //on.displayLib();
-    mov.shiftDownCol(1);
-    System.out.println();
-    mov.shiftRightRow(2);
-    System.out.println();
-    //mov.ax();
-
+    /*for(int i=0;i<8;i++){
+    mov.shiftRight(i,i);
+    mov.shiftDown(i,i);
+    System.out.println();*/
+    Enkrip baru = new Enkrip();
+    baru.getValue();
+    baru.solved();
+    //}
   }
 }

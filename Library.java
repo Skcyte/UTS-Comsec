@@ -1,12 +1,12 @@
 import java.util.*;
 public class Library{
 	private char[][] lib;
-    private char[][] backupRow, backupCol;
+    private char[][] clone1, clone2;
 	public Library(){
 		//System.out.println(Arrays.deepToString(fill()));
         lib = new char[8][8];
-        backupRow = new char[8][8];
-        backupCol = new char[8][8];
+        clone1 = new char[8][8];
+       	clone2 = new char[8][8];
 	}
 	public char[][] fill(){
        lib = new char[][]
@@ -20,32 +20,57 @@ public class Library{
                {'u', 'v', 'w', 'x', 'y', 'z', '+', '-'}};
         return lib;
 	}
-	public void cloning(){
+	public char[][] cloning(){
 		for (int i=0; i<lib.length; i++){
 			for (int j=0; j<lib[i].length; j++){
-				backupRow[i][j] = lib[i][j];
-                backupCol[i][j] = lib[i][j];
+								clone1[i][j] = lib[i][j];
             }
 		}
-		getBackupCol();
-        getBackupRow();
+		return clone1;
 	}
+	public char[][] cloning1(char[][] clone1,char[][] clone2){
+		for (int i=0; i<lib.length; i++){
+			for (int j=0; j<lib[i].length; j++){
+								clone1[i][j] = clone2[i][j];
+            }
+		}
+		return clone1;
+	}
+	public char[][] cloning2(char[][] clone2,char[][] clone1){
+		for (int i=0; i<lib.length; i++){
+			for (int j=0; j<lib[i].length; j++){
+								clone2[i][j] = clone1[i][j];
+            }
+		}
+		return clone2;
+	}
+
 	public char[][] getLib(){
 		return fill();
 	}
     public char[][] getBackupRow(){
-        return backupRow;
+        return cloning1(clone1, clone2);
     }
     public char[][] getBackupCol(){
-        return backupCol;
+        return cloning2(clone2, clone1);
     }
 	public void displayLib(){
-		//Cuma cara teknik print tok
-		Arrays.stream(lib).forEach(System.out::println);
-		//System.out.println();
-		//Arrays.stream(backupRow).forEach(System.out::println);
-        //System.out.println();
-        //Arrays.stream(backupCol).forEach(System.out::println);
+		for(int i=0; i<lib.length; i++){
+			for(int j=0; j<lib[i].length; j++){
+				System.out.print(lib[i][j]);
+				if(j==lib[i].length-1)
+				System.out.println();
+			}
+		}
+	}
+	public void displayClone(){
+		for(int i=0; i<clone2.length; i++){
+			for(int j=0; j<clone2[i].length; j++){
+				System.out.print(clone2[i][j]);
+				if(j==clone2[i].length-1)
+				System.out.println();
+			}
+		}
 	}
 }
 
