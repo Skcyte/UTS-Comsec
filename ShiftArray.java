@@ -61,16 +61,22 @@ public class ShiftArray {
     Arrays.stream(temp).forEach(System.out::println);
     return temp;
   }
-  public void getPus(){
+  public char[][] getPus(){
     return pus;
   }
-  public void getTemp(){
+  public char[][] getTemp(){
     return temp;
   }
-  public void getTempx(){
+  public char[][] getTempx(){
     return tempx;
   }
   public void cetakClone(){
-    Arrays.stream(tempx).forEach(System.out::println);
+    for(int i=0; i<tempx.length; i++){
+			for(int j=0; j<tempx[i].length; j++){
+				System.out.print(tempx[i][j]);
+				if(j==tempx[i].length-1)
+				System.out.println();
+			}
   }
+}
 }

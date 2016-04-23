@@ -12,8 +12,7 @@ public class MainProg{
     mov.shiftDown(i,i);
     System.out.println();*/
     Enkrip baru = new Enkrip();
-    baru.getValue();
-    baru.solved();
+    baru.encrypted();
     //}
   }
 }
